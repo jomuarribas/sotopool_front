@@ -26,6 +26,10 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    const captchaValue = recaptcha.current.getValue();
+    if (!captchaValue) {
+      return;
+    }
     const formData = new FormData();
     const next = '/welcome';
     formData.append('name', e.target.name.value);
@@ -38,7 +42,7 @@ export default function Register() {
     const route = 'users/register';
     try {
       const data = await apiFetch(true, 'POST', route, formData, null, 'multipart/form-data');
-      if (data.ok) {
+      if (data && data.ok) {
         router.push(next);
       }
     } catch (error) {

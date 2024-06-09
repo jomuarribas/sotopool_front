@@ -27,6 +27,10 @@ export default function Register() {
     setFileName2(e.target.files[0].name);
   };
 
+  function handleClick() {
+    window.scrollTo(0, 0,);
+  }
+
   const handleRegister = async (e) => {
     e.preventDefault();
     const captchaValue = recaptcha.current.getValue();
@@ -85,7 +89,7 @@ export default function Register() {
             sitekey="6LdqnPQpAAAAAPSZw_-IQEfu0zDDR8hFvnwbCk1X"
             ref={recaptcha}
           />
-          <button type="submit">Registrar</button>
+          <button type="submit" onClick={handleClick}>Registrar</button>
           <hr />
           <Link href="/login">
             <button type="button">Volver a Login</button>

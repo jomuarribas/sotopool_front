@@ -72,15 +72,18 @@ export default function Register() {
           <input type="password" name="password" required placeholder="Password" />
           <p>Selecciona o hazte una foto en la cual se vea bien tu cara.</p>
           <p>IMPORTANTE!! La foto que elijas ya no se podrá cambiar una vez estés registrado.</p>
+          <p>CENTRA TU FOTOGRAFÍA:</p>
+          <Image src="/assets/esquema.webp" alt="Esquema" width={250} height={496} />
           <label htmlFor="img" className={styles.customFileUpload}>
-            Subir foto de perfil
+            Subir o hacer foto de perfil
           </label>
           <input type="file" id='img' name="img" onChange={handleFileChange} />
           <p className={styles.filename}>{fileName}</p>
           <hr />
           <p>Haz una foto a tu carnet de la piscina para que podamos verificar tu identidad.</p>
+          <Image src="/assets/esquema_carnet.webp" alt="Esquema_carnet" width={250} height={130} />
           <label htmlFor="license" className={styles.customFileUpload}>
-            Subir foto del carnet
+            Hacer foto del carnet
           </label>
           <input type="file" id='license' name="license" required onChange={handleFileChange2} />
           <p className={styles.filename}>{fileName2}</p>

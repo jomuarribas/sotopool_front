@@ -21,6 +21,7 @@
 
 .register > div > form {
   display: flex;
+  position: relative;
   flex-direction: column;
   gap: 10px;
 }

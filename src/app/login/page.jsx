@@ -4,9 +4,10 @@ import Link from 'next/link'
 
 import styles from "./page.module.css";
 import { useApi } from '../hooks/useApi';
+import Loader from '../components/Loader/Loader';
 
 export default function Login() {
-  const { apiFetch } = useApi();
+  const { apiFetch, loading } = useApi();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,6 +26,8 @@ export default function Login() {
     }
   }
   return (
+    <>
+      {loading ? <Loader /> : null}
     <main className={styles.login}>
       <div>
         <Image src="https://res.cloudinary.com/dbnmjx6vr/image/upload/v1709246885/Logo_SDA_reytxe.webp" alt="Logo" width={120} height={120} />
@@ -40,5 +43,6 @@ export default function Login() {
         </form>
       </div>
     </main>
+    </>
   );
 }

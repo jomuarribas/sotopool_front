@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react';
 import { useApi } from '../hooks/useApi';
 import { useRouter } from 'next/navigation';
+import Loader from '../components/Loader/Loader';
 
 export default function Home() {
   const actualDate = new Date()
@@ -12,7 +13,7 @@ export default function Home() {
   const [verification, setVerification] = useState(false);
   const formatDate = actualDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
   const router = useRouter();
-  const {apiFetch} = useApi();
+  const {apiFetch, loading} = useApi();
 
   useEffect(() => {
     if (typeof window !== 'undefined' && !localStorage.getItem('token')) {
@@ -45,6 +46,7 @@ export default function Home() {
   
   return (
     <>
+    {loading ? <Loader /> : null}
     {verification && (
     <main className={styles.home}>
       <h1>CDV SOTO DE ALCOLEA</h1>

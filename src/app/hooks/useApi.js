@@ -1,6 +1,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import Loader from '../components/Loader/Loader';
 
 export const useApi = () => {
   const router = useRouter();
@@ -48,6 +49,7 @@ export const useApi = () => {
       const data = await response.json();
 
       if (!response.ok) {
+        setLoading(false);
         if (alert) {
           showAlert(data.error || data.warning, data.error ? true : false, data.warning ? true : false);
         }

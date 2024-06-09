@@ -7,14 +7,17 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { useApi } from '../hooks/useApi';
 import { useRouter } from 'next/navigation';
+import Loader from '../components/Loader/Loader';
 
 export default function Register() {
   const [fileName, setFileName] = useState('');
   const [fileName2, setFileName2] = useState('');
   const formRef = useRef(null);
-  const { apiFetch } = useApi();
+  const { apiFetch, loading } = useApi();
   const router = useRouter();
   const recaptcha = useRef();
+
+  console.log('loading', loading);
 
   const handleFileChange = (e) => {
     setFileName(e.target.files[0].name);
@@ -51,6 +54,8 @@ export default function Register() {
   };
 
   return (
+    <>
+      {loading ? <Loader /> : null}
     <main className={styles.register}>
       <div>
         <Image src="https://res.cloudinary.com/dbnmjx6vr/image/upload/v1709246885/Logo_SDA_reytxe.webp" alt="Logo" width={70} height={70} />
@@ -88,5 +93,6 @@ export default function Register() {
         </form>
       </div>
     </main>
+    </>
   );
 }

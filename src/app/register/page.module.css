@@ -1,0 +1,84 @@
+.register {
+  display: flex;
+  width: 100%;
+  min-height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+
+.register > div {
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(240, 248, 255, 0.606);
+  margin: 20px 0;
+}
+
+.register > div > img {
+  margin: 0 auto;
+}
+
+.register > div > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register > div > form > input {
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 17px;
+}
+.register > div > form > button,
+.register > div > form > a > button {
+  background-color: #09467d;
+  color:aliceblue;
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.register > div > form > button:hover,
+.register > div > form > a > button:hover {
+  background-color: #0c7b93;
+}
+
+.register > div > h2 {
+  font-size: 1.5rem;
+  margin: 20px;
+  margin-top: 10px;
+}
+
+.register > h3 {
+  position: absolute;
+  left: -10px;
+  transform: rotate(90deg);
+  font-size: 150px;
+}
+
+.register > div > form > input[type="file"] {
+  display: none;
+}
+
+.register .filename {
+  font-size: 15px;
+  color: #09467d;
+}
+
+.customFileUpload {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

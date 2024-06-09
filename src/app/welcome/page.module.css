@@ -1,0 +1,58 @@
+.welcome {
+  display: flex;
+  width: 100%;
+  min-height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome > div {
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(240, 248, 255, 0.606);
+  margin: 20px 0;
+}
+
+.welcome > div > img {
+  margin: 0 auto;
+}
+
+.welcome > div > p {
+  margin-bottom: 15px;
+}
+
+.welcome > div > a > button {
+  background-color: #09467d;
+  color:aliceblue;
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.welcome > div > a > button:hover {
+  background-color: #0c7b93;
+}
+
+.welcome > div > h2 {
+  font-size: 1.5rem;
+  margin: 20px;
+  margin-top: 10px;
+}
+
+.welcome > h3 {
+  position: absolute;
+  left: -10px;
+  transform: rotate(90deg);
+  font-size: 150px;
+}
+
+.welcome > div > form > input[type="file"] {
+  display: none;
+}

@@ -1,0 +1,69 @@
+.login {
+  display: flex;
+  width: 100%;
+  min-height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login > div {
+  position: relative;
+  text-align: center;
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(240, 248, 255, 0.606);
+}
+
+.login > div > img {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.login > div > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login > div > form > input {
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 17px;
+}
+.login > div > form > button,
+.login > div > form > a > button {
+  background-color: #09467d;
+  color:#f0f8ff;
+  width: 100%;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.login > div > form > button:hover,
+.login > div > form > a > button:hover {
+  background-color: #0c7b93;
+}
+
+.login > div > h2 {
+  font-size: 1.5rem;
+  margin: 20px;
+  margin-top: 40px;
+}
+
+.login > h3 {
+  position: absolute;
+  left: -10px;
+  transform: rotate(90deg);
+  font-size: 150px;
+}

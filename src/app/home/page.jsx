@@ -14,7 +14,11 @@ export default function Home() {
   const router = useRouter();
   const {apiFetch} = useApi();
 
-  if (!localStorage.getItem('token')) router.push("/login");
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !localStorage.getItem('token')) {
+      router.push("/login");
+    }
+  }, [router]);
 
   const confirmUser = async () => {
     const id = localStorage.getItem('user');

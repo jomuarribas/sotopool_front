@@ -26,10 +26,6 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const captchaValue = recaptcha.current.getValue();
-    if (!captchaValue) {
-      return;
-    }
     const formData = new FormData();
     const next = '/welcome';
     formData.append('name', e.target.name.value);

@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 import styles from "./page.module.css";
 import { useRef, useState } from 'react';
@@ -13,6 +14,7 @@ export default function Register() {
   const formRef = useRef(null);
   const { apiFetch } = useApi();
   const router = useRouter();
+  const recaptcha = useRef();
 
   const handleFileChange = (e) => {
     setFileName(e.target.files[0].name);
@@ -24,6 +26,10 @@ export default function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    const captchaValue = recaptcha.current.getValue();
+    if (!captchaValue) {
+      return;
+    }
     const formData = new FormData();
     const next = '/welcome';
     formData.append('name', e.target.name.value);
@@ -69,6 +75,11 @@ export default function Register() {
           </label>
           <input type="file" id='license' name="license" required onChange={handleFileChange2} />
           <p className={styles.filename}>{fileName2}</p>
+          <ReCAPTCHA
+            className={styles.reCaptcha}
+            sitekey="6LdqnPQpAAAAAPSZw_-IQEfu0zDDR8hFvnwbCk1X"
+            ref={recaptcha}
+          />
           <button type="submit">Registrar</button>
           <hr />
           <Link href="/login">
